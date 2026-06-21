@@ -1,0 +1,67 @@
+ :root {
+    color: #17211b;
+    background: #f3f5f1;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+a { color: #17633a; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem clamp(1rem, 5vw, 5rem);
+    border-bottom: 1px solid #d9dfd8;
+    background: #fff;
+}
+
+.brand { color: #123d27; font-weight: 800; letter-spacing: -.02em; }
+.site-header nav { display: flex; gap: 1rem; }
+.page-shell { display: grid; min-height: calc(100vh - 65px); place-items: center; padding: 2rem 1rem; }
+
+.auth-card, .dashboard-card {
+    width: min(100%, 32rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    border: 1px solid #d9dfd8;
+    border-radius: 1rem;
+    background: #fff;
+    box-shadow: 0 20px 55px rgba(27, 45, 34, .08);
+}
+
+h1 { margin: .25rem 0 .5rem; font-size: clamp(1.75rem, 5vw, 2.4rem); letter-spacing: -.04em; }
+.eyebrow { margin: 0; color: #28764a; font-size: .75rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.muted { color: #66736b; line-height: 1.55; }
+.form-stack { display: grid; gap: 1rem; margin: 1.5rem 0; }
+.form-stack label { display: grid; gap: .4rem; font-weight: 650; }
+
+input {
+    width: 100%;
+    padding: .8rem .9rem;
+    border: 1px solid #bfc9c1;
+    border-radius: .6rem;
+    font: inherit;
+}
+
+input:focus { border-color: #28764a; outline: 3px solid rgba(40, 118, 74, .14); }
+.checkbox-row { display: flex !important; align-items: center; font-weight: 500 !important; }
+.checkbox-row input { width: auto; }
+.error { color: #b42318; font-weight: 500; }
+
+button {
+    padding: .85rem 1rem;
+    border: 0;
+    border-radius: .6rem;
+    color: #fff;
+    background: #17633a;
+    font: inherit;
+    font-weight: 750;
+    cursor: pointer;
+}
+
+button:hover { background: #104d2c; }
+button:disabled { cursor: wait; opacity: .65; }
+.architecture-flow { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin: 1.5rem 0; padding: 1rem; border-radius: .75rem; background: #eef5ef; }
+code { padding: .15rem .35rem; border-radius: .3rem; background: #eef1ee; }
