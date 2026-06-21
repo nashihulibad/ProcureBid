@@ -1,66 +1,225 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ProcureBid
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Enterprise Reverse Auction Platform for Procurement & Strategic Sourcing.
 
-## About Laravel
+ProcureBid is a procurement-focused auction platform that enables organizations to conduct competitive sourcing events and allows vendors to participate in real-time reverse auctions.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The project is designed as a Technical Lead engineering showcase, demonstrating architecture design, real-time systems, security, scalability, and AI-assisted software delivery using modern Laravel technologies.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Overview
 
-## Learning Laravel
+Traditional procurement processes often involve manual negotiations, lengthy vendor comparisons, and limited pricing transparency.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+ProcureBid streamlines the sourcing process by providing a centralized platform where buyers can create auction events and vendors compete by submitting progressively better offers in real time.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+The platform supports multiple auction mechanisms commonly used in enterprise procurement environments and is designed with auditability, governance, and scalability as core principles.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Core Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Procurement Auction Management
 
-### Premium Partners
+* Create and manage sourcing events
+* Vendor qualification and participation management
+* Auction scheduling and publication
+* Auction awarding process
+* Procurement audit trail
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### Reverse Auction Engine
 
-## Contributing
+Supported auction types:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+#### English Reverse Auction
 
-## Code of Conduct
+Vendors continuously submit lower bids during the auction period. The lowest valid bid at auction close becomes the winning bid.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+#### Japanese Reverse Auction
 
-## Security Vulnerabilities
+The system automatically decreases the current price at predefined intervals. Vendors must actively remain in the auction. Participants who fail to respond are eliminated until a winner remains.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+#### Dutch Reverse Auction
+
+The system decreases the current price over time. The first vendor that accepts the current price becomes the winner and the auction closes immediately.
+
+---
+
+## Real-Time Auction Room
+
+Powered by Laravel Reverb and Laravel Echo.
+
+Capabilities include:
+
+* Live bid updates
+* Real-time ranking updates
+* Auction timer synchronization
+* Participant activity monitoring
+* Instant auction status notifications
+
+---
+
+## Procurement Governance
+
+Designed with enterprise procurement practices in mind:
+
+* Buyer Management
+* Vendor Management
+* Vendor Qualification
+* Auction Approval Workflow
+* Auction Award Process
+* Audit & Compliance Support
+
+---
+
+## Security
+
+Security is treated as a first-class concern.
+
+Features:
+
+* Laravel Sanctum Authentication
+* Role-Based Access Control (RBAC)
+* Policy-Based Authorization
+* Secure File Handling
+* Rate Limiting
+* Audit Logging
+* Transaction Safety
+* Server-Side Bid Validation
+
+Security reviews include protection against:
+
+* SQL Injection
+* Cross-Site Scripting (XSS)
+* Insecure Direct Object References (IDOR)
+* Mass Assignment
+* Race Conditions
+* Unauthorized Access
+
+---
+
+## Audit & Compliance
+
+Every critical procurement activity is recorded.
+
+Examples:
+
+* Auction Creation
+* Auction Modification
+* Vendor Registration
+* Vendor Qualification
+* Bid Submission
+* Auction Closure
+* Winner Determination
+
+The platform supports complete auction replay capabilities using historical audit data.
+
+---
+
+## Technology Stack
+
+### Backend
+
+* Laravel 12
+* PHP 8.3
+
+### Frontend
+
+* Livewire 3
+* AlpineJS
+* TailwindCSS
+
+### Database
+
+* PostgreSQL
+
+### Realtime Communication
+
+* Laravel Reverb
+* Laravel Echo
+
+### Queue & Background Jobs
+
+* Redis
+* Laravel Queue
+
+### Infrastructure
+
+* Docker
+* Nginx
+
+---
+
+## Architecture
+
+Architecture Style:
+
+```text
+Modular Monolith
+```
+
+Core Modules:
+
+```text
+Auth
+Buyer
+Vendor
+Auction
+Bidding
+Evaluation
+Notification
+Audit
+```
+
+Design Principles:
+
+* Service Layer Pattern
+* Repository Pattern
+* Event-Driven Architecture
+* Queue-Based Processing
+* Domain-Oriented Design
+* Thin Controller Principle
+
+---
+
+## Project Roadmap
+
+### MVP
+
+* Authentication & RBAC
+* Auction Management
+* Vendor Registration
+* English Reverse Auction
+* Live Auction Room
+* Winner Determination
+* Audit Trail
+
+### Advanced Features
+
+* Japanese Reverse Auction
+* Dutch Reverse Auction
+* Auction Replay
+* Procurement Analytics Dashboard
+* Vendor Performance Metrics
+* Strategic Sourcing Reporting
+
+---
+
+## Engineering Objectives
+
+This project serves as a practical demonstration of:
+
+* Technical Leadership
+* Enterprise Application Architecture
+* Real-Time System Design
+* Secure Software Engineering
+* Procurement Domain Expertise
+* AI-Assisted Development Workflow
+* Modern Laravel Best Practices
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is developed as a portfolio and learning initiative for demonstrating enterprise software engineering and technical leadership capabilities.
